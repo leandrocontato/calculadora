@@ -17,8 +17,6 @@ function calculate() {
 $(document).ready(function () {
     var suggestions = [
         'Fórmula 1',
-        'Fórmula 2',
-        'Fórmula 3'
     ];
 
     $('#searchBar').on('input', function () {
@@ -48,8 +46,6 @@ const formulasQuimica = formulas.quimica;
 
 // Usar as fórmulas conforme necessário
 console.log(formulasMatematica[0]); // Fórmula da velocidade média: v = Δx/Δt
-console.log(formulasFisica[1]); // Fórmula da aceleração média: a = Δv/Δt
-console.log(formulasQuimica[2]); // Fórmula da concentração molar: C = n/V
 
 // Função para adicionar o texto ao campo de exibição
 function appendToDisplay(value) {
