@@ -36,7 +36,6 @@ $(document).ready(function () {
         });
     });
 });
-const formulas = require('./formulas.js');
 
 // Acessar as fórmulas de matemática
 const formulasMatematica = formulas.matematica;
@@ -52,13 +51,14 @@ console.log(formulasMatematica[0]); // Fórmula da velocidade média: v = Δx/Δ
 console.log(formulasFisica[1]); // Fórmula da aceleração média: a = Δv/Δt
 console.log(formulasQuimica[2]); // Fórmula da concentração molar: C = n/V
 
-
+// Função para adicionar o texto ao campo de exibição
 function appendToDisplay(value) {
     var display = document.getElementById('display');
     display.value += value;
 }
 
-function calculate() {
+// Função para calcular o resultado da expressão inserida no campo de exibição
+function calculateResult() {
     var display = document.getElementById('display');
     var expression = display.value;
 

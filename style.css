@@ -21,6 +21,12 @@ h1 {
     display: inline-block;
 }
 
+.calculator {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+
 .row {
     margin-bottom: 10px;
 }
@@ -32,11 +38,6 @@ h1 {
     font-size: 20px;
 }
 
-.calculator {
-    width: 200px;
-    margin: auto;
-    text-align: center;
-}
 
 .buttons {
     display: grid;

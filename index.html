@@ -18,23 +18,75 @@
         </div>
         <div class="row">
             <div class="buttons">
-                <!-- Botões numéricos -->
-                <button class="btn" onclick="appendToInput('0')">0</button>
-                <button class="btn" onclick="appendToInput('1')">1</button>
-                <button class="btn" onclick="appendToInput('2')">2</button>
-                <button class="btn" onclick="appendToInput('3')">3</button>
-                <button class="btn" onclick="appendToInput('4')">4</button>
-                <button class="btn" onclick="appendToInput('5')">5</button>
-                <button class="btn" onclick="appendToInput('6')">6</button>
-                <button class="btn" onclick="appendToInput('7')">7</button>
-                <button class="btn" onclick="appendToInput('8')">8</button>
-                <button class="btn" onclick="appendToInput('9')">9</button>
-                <!-- Botões de operações matemáticas -->
-                <button class="btn" onclick="appendToInput('+')">+</button>
-                <button class="btn" onclick="appendToInput('-')">-</button>
-                <button class="btn" onclick="appendToInput('*')">*</button>
-                <button class="btn" onclick="appendToInput('/')">/</button>
-                <!-- Botões com símbolos especiais -->
+                <div class="numeros">
+                    <!-- Botões numéricos -->
+                    <button class="btn" onclick="appendToInput('0')">0</button>
+                    <button class="btn" onclick="appendToInput('1')">1</button>
+                    <button class="btn" onclick="appendToInput('2')">2</button>
+                    <button class="btn" onclick="appendToInput('3')">3</button>
+                    <button class="btn" onclick="appendToInput('4')">4</button>
+                    <button class="btn" onclick="appendToInput('5')">5</button>
+                    <button class="btn" onclick="appendToInput('6')">6</button>
+                    <button class="btn" onclick="appendToInput('7')">7</button>
+                    <button class="btn" onclick="appendToInput('8')">8</button>
+                    <button class="btn" onclick="appendToInput('9')">9</button>
+                </div>
+                <div class="operacoes">
+                    <!-- Botões de operações matemáticas -->
+                    <button class="btn" onclick="appendToInput('+')">+</button><!-- adição -->
+                    <button class="btn" onclick="appendToInput('-')">-</button><!-- subtração -->
+                    <button class="btn" onclick="appendToInput('*')">*</button><!-- multiplicação -->
+                    <button class="btn" onclick="appendToInput('/')">/</button><!-- divisão -->
+                </div>
+                <div class="matemática">
+                    <!-- Botões com símbolos especiais matemáticas -->
+                    <button class="btn" style="display: none;" 
+                        onclick="appendToInput('<')">menor</button><!-- menor que -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('>')">></button><!-- maior que -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('≤')">≤</button><!-- menor ou igual a -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('≥')">≥</button><!-- maior ou igual a -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('≠')">≠</button><!-- diferente de -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∑')">∑</button><!-- soma -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∫')">∫</button><!-- integral -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('√')">√</button><!-- raiz quadrada -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('²')">²</button><!-- elevado ao quadrado -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('³')">³</button><!-- elevado ao cubo -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('π')">π</button><!-- pi, aproximadamente 3.14159 -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('%')">%</button><!-- porcentagem -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('!')">!</button><!-- fatorial -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('|')">|</button><!-- valor absoluto -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∞')">∞</button><!-- infinito -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∠')">∠</button><!-- ângulo -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∴')">∴</button><!-- portanto -->
+                </div>
+                <div class="fisica">
+                    <!-- Botões com símbolos especiais fisica -->
+                    <button class="btn" style="display: none;"
+                        onclick="appendToInput('//')">⇌</button><!-- Simboliza uma reação química reversível -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('Δ')">Δ</button>
+                    <!-- Simboliza uma variação ou diferença -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∆')">∆</button>
+                    <!-- Simboliza uma diferença infinitesimal -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('→')">→</button>
+                    <!-- Simboliza uma transformação ou processo -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('⇒')">⇒</button>
+                    <!-- Simboliza uma implicação ou consequência lógica -->
+                    <button class="btn" style="display: none;" onclick="appendToInput('∴')">∴</button>
+                    <!-- Simboliza, portanto, uma conclusão lógica -->
+                </div>
+                <div class="quimica">
+                    <!-- Botões com símbolos especiais quimica -->
+                    <!-- Tabela quimica -->
+                </div>
             </div>
         </div>
         <div class="row">
