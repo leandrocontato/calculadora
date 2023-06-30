@@ -1,23 +1,18 @@
-// Função para adicionar o texto do botão no campo de entrada
-function appendToInput(text) {
-    var inputField = document.getElementById('inputField');
-    inputField.value += text;
-}
-
-// Função para calcular o resultado da expressão matemática inserida
-function calculate() {
-    var inputField = document.getElementById('inputField');
-    var expression = inputField.value;
-    var result = eval(expression); // Função eval() avalia a expressão como JavaScript
-
-    inputField.value = result;
-}
-
 // Função para pesquisar e exibir sugestões de fórmulas
 $(document).ready(function () {
-    var suggestions = [
-        'Fórmula 1',
-    ];
+    var suggestions = [];
+
+    // Acessar as fórmulas de matemática
+    const formulasMatematica = formulas.matematica;
+    suggestions = suggestions.concat(formulasMatematica);
+
+    // Acessar as fórmulas de física
+    const formulasFisica = formulas.fisica;
+    suggestions = suggestions.concat(formulasFisica);
+
+    // Acessar as fórmulas de química
+    const formulasQuimica = formulas.quimica;
+    suggestions = suggestions.concat(formulasQuimica);
 
     $('#searchBar').on('input', function () {
         var searchTerm = $(this).val();
@@ -34,18 +29,6 @@ $(document).ready(function () {
         });
     });
 });
-
-// Acessar as fórmulas de matemática
-const formulasMatematica = formulas.matematica;
-
-// Acessar as fórmulas de física
-const formulasFisica = formulas.fisica;
-
-// Acessar as fórmulas de química
-const formulasQuimica = formulas.quimica;
-
-// Usar as fórmulas conforme necessário
-console.log(formulasMatematica[0]); // Fórmula da velocidade média: v = Δx/Δt
 
 // Função para adicionar o texto ao campo de exibição
 function appendToDisplay(value) {
