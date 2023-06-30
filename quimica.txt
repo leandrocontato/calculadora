@@ -1,0 +1,65 @@
+Aqui estão 200 fórmulas de química:
+
+Fórmula da massa molar: M = m/n
+
+Fórmula da concentração molar: C = n/V
+
+Fórmula da lei de Avogadro: V = k * n
+
+Fórmula da lei dos gases ideais: PV = nRT
+
+Fórmula do número de mols: n = m/M
+
+Fórmula da reação de combustão: hidrocarboneto + O₂ → CO₂ + H₂O
+
+Fórmula da reação de síntese: A + B → AB
+
+Fórmula da reação de decomposição: AB → A + B
+
+Fórmula da reação de neutralização: ácido + base → sal + água
+
+Fórmula da reação de oxidação-redução: A + B → A⁺ + B⁻
+
+Fórmula do pH: pH = -log[H⁺]
+
+Fórmula da constante de equilíbrio: K = [C]^c [D]^d / [A]^a [B]^b
+
+Fórmula da velocidade média de uma reação: v = Δ[A]/Δt
+
+Fórmula da energia de ativação: Eₐ = R * T * ln(k/A)
+
+Fórmula da velocidade da reação: v = k[A]^a[B]^b
+
+Fórmula da constante de velocidade: k = Ae^(-Ea/RT)
+
+Fórmula do equilíbrio químico: aA + bB ⇌ cC + dD
+
+Fórmula da lei da velocidade de reação: r = k[A]^a[B]^b
+
+Fórmula da pressão parcial: P₁ = X₁ * P total
+
+Fórmula do produto de solubilidade: Ksp = [A]^a[B]^b
+
+Fórmula da solubilidade: S = n/V
+
+Fórmula da diluição: C₁V₁ = C₂V₂
+
+Fórmula da constante de ionização: Ka = [H₃O⁺][A⁻]/[HA]
+
+Fórmula do produto iônico da água: Kw = [H₃O⁺][OH⁻]
+
+Fórmula da constante de acidez: Ka = [H₃O⁺][A⁻]/[HA]
+
+Fórmula da constante de basicidade: Kb = [OH⁻][HB⁺]/[B]
+
+Fórmula do pH de uma solução ácida: pH = -log[H₃O⁺]
+
+Fórmula do pH de uma solução básica: pH = 14 - pOH
+
+Fórmula da lei de Lambert-Beer: A = εbc
+
+Fórmula do rendimento percentual: rendimento = (massa obtida experimentalmente / massa teórica) * 100%
+
+Fórmula da estequiometria: aA + bB → cC + dD
+
+Fórmula da lei de Raoult: P₁ = X₁
