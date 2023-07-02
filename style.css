@@ -50,3 +50,22 @@ button {
     width: 40px;
     height: 40px;
 }
+
+.ocultos {
+    background-color: #ccc;
+    color: #333;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.ocultos:hover {
+    background-color: #999;
+    color: #fff;
+}
