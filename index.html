@@ -3,85 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica</title>
     <script src="formulas.js"></script>
     <script src="script.js"></script>
-    <title>Calculadora</title>
 </head>
 
 <body>
-    <h1>Calculadora</h1>
-    <div class="calculator">
-        <input type="text" id="searchBar" placeholder="Digite a fórmula">
+    <h1>Calculadora Científica</h1>
+    <div>
+        <input type="text" id="formula-search" placeholder="Pesquisar fórmula">
+        <button onclick="searchFormula()">Pesquisar</button>
+    </div>
+    <div>
         <input type="text" id="display" readonly>
-        <div id="suggestions">
-            <!-- Aqui serão exibidas as sugestões de fórmulas -->
-        </div>
-        <div class="row col-md-12">
-            <button class="btn" onclick="calculate()">=</button>
-            <div class="buttons">
-                <!-- Botões numéricos -->
-                <button class="numeros btn" onclick="appendToInput('0')">0</button>
-                <button class="numeros btn" onclick="appendToInput('1')">1</button>
-                <button class="numeros btn" onclick="appendToInput('2')">2</button>
-                <button class="numeros btn" onclick="appendToInput('3')">3</button>
-                <button class="numeros btn" onclick="appendToInput('4')">4</button>
-                <button class="numeros btn" onclick="appendToInput('5')">5</button>
-                <button class="numeros btn" onclick="appendToInput('6')">6</button>
-                <button class="numeros btn" onclick="appendToInput('7')">7</button>
-                <button class="numeros btn" onclick="appendToInput('8')">8</button>
-                <button class="numeros btn" onclick="appendToInput('9')">9</button>
-                <!-- Botões de operações matemáticas -->
-                <button class="operacoes btn" onclick="appendToInput('+')">+</button>
-                <button class="operacoes btn" onclick="appendToInput('-')">-</button>
-                <button class="operacoes btn" onclick="appendToInput('*')">*</button>
-                <button class="operacoes btn" onclick="appendToInput('/')">/</button>
-                <!-- Botões ocultos -->
-                <button class="ocultos btn" onclick="appendToInput('(')">(</button>
-                <button class="ocultos btn" onclick="appendToInput(')')">)</button>
-                <button class="ocultos btn" onclick="appendToInput('sen')">sen</button>
-                <button class="ocultos btn" onclick="appendToInput('cos')">cos</button>
-                <button class="ocultos btn" onclick="appendToInput('tan')">tan</button>
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('<')">menor</button><!-- menor que -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('>')">></button><!-- maior que -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('≤')">≤</button><!-- menor ou igual a -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('≥')">≥</button><!-- maior ou igual a -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('≠')">≠</button><!-- diferente de -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('∑')">∑</button><!-- soma -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('∫')">∫</button><!-- integral -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('√')">√</button><!-- raiz quadrada -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('²')">²</button><!-- elevado ao quadrado -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('³')">³</button><!-- elevado ao cubo -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('π')">π</button><!-- pi, aproximadamente 3.14159 -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('%')">%</button><!-- porcentagem -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('!')">!</button><!-- fatorial -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('|')">|</button><!-- valor absoluto -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('∞')">∞</button><!-- infinito -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('∠')">∠</button><!-- ângulo -->
-                <button class="ocultos btn" style="display: none;" onclick="appendToInput('∴')">∴</button><!-- portanto -->
-                <!-- Botões com símbolos especiais fisica -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('/ /')">⇌</button><!-- Simboliza uma reação química reversível -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('Δ')">Δ</button><!-- Simboliza uma variação ou diferença -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('∆')">∆</button><!-- Simboliza uma diferença infinitesimal -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('→')">→</button><!-- Simboliza uma transformação ou processo -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('⇒')">⇒</button><!-- Simboliza uma implicação ou consequência lógica -->
-                <button class="ocultos btn" style="display: none;"
-                    onclick="appendToInput('∴')">∴</button><!-- Simboliza, portanto, uma conclusão lógica -->
-            </div>
-        </div>
+    </div>
+    <div>
+        <button onclick="showHiddenButtons()">Exibir botões ocultos</button>
+    </div>
+    <div>
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="clearDisplay()">C</button>
+    </div>
+    <div>
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('+')">+</button>
+        <button onclick="appendToDisplay('-')">-</button>
+    </div>
+    <div>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('/')">/</button>
+        <button onclick="appendToDisplay('*')">*</button>
+    </div>
+    <div>
+        <button onclick="appendToDisplay('0')">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+    </div>
+    <div id="hidden-buttons">
+        <button onclick="calculatePower()">x²</button>
+        <button onclick="calculateSquareRoot()">√</button>
+        <button onclick="appendToDisplay('(')">(</button>
+        <button onclick="appendToDisplay(')')">)</button>
+        <button onclick="calculateFactorial()">!</button>
+    </div>
+    <div>
+        <h3>Fórmulas:</h3>
+        <ul id="formula-list"></ul>
     </div>
 </body>
 

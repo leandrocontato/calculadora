@@ -1,4 +1,4 @@
-const formulasMatematica = [
+var formulas = [
     { nome: "Lei dos Senos", formula: "a/sin(A) ≈ b/sin(B) ≈ c/sin(C)" },
     { nome: "Lei dos Cossenos", formula: "c^2 ≈ a^2 + b^2 - 2*a*b*cos(C)" },
     { nome: "Área do Triângulo", formula: "Área = (1/2) * base * altura" },
@@ -77,12 +77,8 @@ const formulasMatematica = [
     { nome: "Fórmula da distância entre dois pontos", formula: "d = √((x2 - x1)² + (y2 - y1)²), onde (x1, y1) e (x2, y2) são as coordenadas dos dois pontos" },
     { nome: "Fórmula do produto escalar de dois vetores", formula: "A · B = |A| * |B| * cos(θ), onde A e B são vetores, |A| e |B| são os seus módulos e θ é o ângulo entre eles" },
     { nome: "Fórmula do produto vetorial de dois vetores", formula: "A x B = |A| * |B| * sin(θ) * n, onde A e B são vetores, |A| e |B| são os seus módulos, θ é o ângulo entre eles e n é o vetor normal ao plano formado por A e B" },
-];
-
-const formulasFisica = [
     { nome: "Fórmula da velocidade média", formula: "v = Δx/Δt" },
     { nome: "Fórmula da aceleração média", formula: "a = Δv/Δt" },
-    // Mecânica:
     { nome: "Fórmula da velocidade média", formula: "v = Δx/Δt" },
     { nome: "Fórmula da aceleração média", formula: "a = Δv/Δt" },
     { nome: "Fórmula da velocidade final", formula: "v = v₀ + at" },
@@ -103,7 +99,6 @@ const formulasFisica = [
     { nome: "Fórmula do torque", formula: "τ = rFsinθ" },
     { nome: "Fórmula do momento de inércia", formula: "I = m * r²" },
     { nome: "Fórmula da lei de conservação do momento de inércia", formula: "I₁ω₁ = I₂ω₂" },
-    // Termodinâmica:
     { nome: "Fórmula da variação de temperatura (escala Celsius)", formula: "ΔT = Tf - Ti" },
     { nome: "Fórmula da variação de temperatura (escala Kelvin)", formula: "ΔT = Tf - Ti" },
     { nome: "Fórmula da quantidade de calor", formula: "Q = mcΔT" },
@@ -114,7 +109,6 @@ const formulasFisica = [
     { nome: "Fórmula da lei de Gay-Lussac", formula: "P₁/T₁ = P₂/T₂" },
     { nome: "Fórmula da lei dos gases ideais", formula: "PV = nRT" },
     { nome: "Fórmula da eficiência térmica", formula: "η = (W/Qh) * 100%" },
-    // Óptica:
     { nome: "Fórmula da velocidade da luz", formula: "c = λν" },
     { nome: "Fórmula da frequência", formula: "ν = c/λ" },
     { nome: "Fórmula do aumento linear", formula: "A = hi/ho" },
@@ -125,7 +119,6 @@ const formulasFisica = [
     { nome: "Fórmula da lei de Snell", formula: "n₁sinθ₁ = n₂sinθ₂" },
     { nome: "Fórmula da vergência da lente", formula: "P = 1/f" },
     { nome: "Fórmula do aumento linear da lente", formula: "A = hi/ho = -di/do" },
-    // Eletromagnetismo:
     { nome: "Fórmula da força elétrica", formula: "F = k * (|q₁| * |q₂|)/r²" },
     { nome: "Fórmula do campo elétrico", formula: "E = F/q" },
     { nome: "Fórmula do potencial elétrico", formula: "V = k * |q|/r" },
@@ -136,7 +129,6 @@ const formulasFisica = [
     { nome: "Fórmula da força magnética em um condutor percorrido por corrente em um campo magnético", formula: "F = BILsinθ" },
     { nome: "Fórmula da lei de Faraday", formula: "ε = -dΦ/dt" },
     { nome: "Fórmula da lei de Ampère", formula: "B∫dl = μ₀ * Ienc" },
-    // Ondas e Som:
     { nome: "Fórmula da velocidade de uma onda", formula: "v = λf" },
     { nome: "Fórmula da frequência de uma onda", formula: "f = v/λ" },
     { nome: "Fórmula do período de uma onda", formula: "T = 1/f" },
@@ -147,7 +139,6 @@ const formulasFisica = [
     { nome: "Fórmula da velocidade do som", formula: "v = √(γRT)" },
     { nome: "Fórmula da frequência fundamental de um tubo sonoro aberto", formula: "f₁ = v/2L" },
     { nome: "Fórmula da frequência fundamental de um tubo sonoro fechado", formula: "f₁ = v/4L" },
-    // Eletrostática:
     { nome: "Fórmula da lei de Coulomb", formula: "F = k * (|q₁| * |q₂|)/r²" },
     { nome: "Fórmula do campo elétrico", formula: "E = F/q" },
     { nome: "Fórmula do potencial elétrico", formula: "V = k * |q|/r" },
@@ -158,7 +149,6 @@ const formulasFisica = [
     { nome: "Fórmula da lei de Gauss", formula: "Φ = E * A = Qenc/ε₀" },
     { nome: "Fórmula da força elétrica entre placas paralelas de um capacitor", formula: "F = EQ" },
     { nome: "Fórmula do campo elétrico produzido por um capacitor plano", formula: "E = σ/ε₀, onde σ é a densidade de carga superficial" },
-    // Magnetismo:
     { nome: "Fórmula da força magnética em um condutor retilíneo", formula: "F = BILsinθ" },
     { nome: "Fórmula da força magnética em uma carga em movimento", formula: "F = qvBsinθ" },
     { nome: "Fórmula da força magnética em uma partícula carregada em um campo elétrico", formula: "F = qEsinθ" },
@@ -169,13 +159,9 @@ const formulasFisica = [
     { nome: "Fórmula da indução magnética em uma espira", formula: "Φ = BAcosθ" },
     { nome: "Fórmula da força eletromotriz induzida", formula: "ε = -dΦ/dt" },
     { nome: "Fórmula da lei de Ampère", formula: "B∫dl = μ₀ * Ienc" },
-    // Óptica Geométrica:
     { nome: "Fórmula da velocidade da luz", formula: "c = 3.00 x 10^8 m/s" },
     { nome: "Fórmula da lei de Snell-Descartes", formula: "n₁sinθ₁ = n₂sinθ₂" },
     { nome: "Fórmula da lente delgada", formula: "1/f = (n-1) * (1/R₁ - 1/R₂)" },
-];
-
-const formulasQuimica = [
     { nome: "Fórmula da massa molar", formula: "M = m/n" },
     { nome: "Fórmula da concentração molar", formula: "C = n/V" },
     { nome: "Fórmula da massa molar", formula: "M = m/n" },
@@ -211,13 +197,3 @@ const formulasQuimica = [
     { nome: "Fórmula da estequiometria", formula: "aA + bB → cC + dD" },
     { nome: "Fórmula da lei de Raoult", formula: "P₁ = X₁" },
 ];
-
-// Exportar as fórmulas como um objeto
-const formulas = {
-    matematica: formulasMatematica,
-    fisica: formulasFisica,
-    quimica: formulasQuimica,
-};
-
-// Exportar o objeto para ser usado em outros arquivos
-module.exports = formulas;
