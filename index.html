@@ -17,7 +17,7 @@
         <button id="botao-pesquisar" onclick="searchFormula()">Pesquisar</button>
     </div>
     <div>
-        <input type="text" id="display" placeholder="Digite sua conta">
+        <input type="text" id="display" class="display" placeholder="Digite sua conta">
     </div>
     <div>
         <button onclick="appendToDisplay('1')">1</button>
@@ -44,16 +44,16 @@
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
     </div>
-    <div>
+    <div class="button-container">
         <button onclick="showHiddenButtons()">Exibir botões ocultos</button>
         <button onclick="hideHiddenButtons()">Esconder botões ocultos</button>
-        <div id="hidden-buttons">
-            <button onclick="calculatePower()">x²</button>
-            <button onclick="calculateSquareRoot()">√</button>
-            <button onclick="appendToDisplay('(')">(</button>
-            <button onclick="appendToDisplay(')')">)</button>
-            <button onclick="calculateFactorial()">!</button>
-        </div>
+    </div>
+    <div id="hidden-buttons">
+        <button onclick="calculatePower()">x²</button>
+        <button onclick="calculateSquareRoot()">√</button>
+        <button onclick="appendToDisplay('(')">(</button>
+        <button onclick="appendToDisplay(')')">)</button>
+        <button onclick="calculateFactorial()">!</button>
     </div>
     <div>
         <h3>Fórmulas:</h3>
