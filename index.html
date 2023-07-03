@@ -13,14 +13,11 @@
 <body>
     <h1>Calculadora Científica</h1>
     <div>
-        <input type="text" id="formula-search" placeholder="Pesquisar fórmula">
-        <button onclick="searchFormula()">Pesquisar</button>
+        <input type="text" id="formula-search" onclick="searchFormula()" placeholder="Pesquisar fórmula">
+        <button id="botao-pesquisar" onclick="searchFormula()">Pesquisar</button>
     </div>
     <div>
-        <input type="text" id="display" readonly>
-    </div>
-    <div>
-        <button onclick="showHiddenButtons()">Exibir botões ocultos</button>
+        <input type="text" id="display" placeholder="Digite sua conta">
     </div>
     <div>
         <button onclick="appendToDisplay('1')">1</button>
@@ -47,12 +44,16 @@
         <button onclick="appendToDisplay('0')">0</button>
         <button onclick="appendToDisplay('.')">.</button>
     </div>
-    <div id="hidden-buttons">
-        <button onclick="calculatePower()">x²</button>
-        <button onclick="calculateSquareRoot()">√</button>
-        <button onclick="appendToDisplay('(')">(</button>
-        <button onclick="appendToDisplay(')')">)</button>
-        <button onclick="calculateFactorial()">!</button>
+    <div>
+        <button onclick="showHiddenButtons()">Exibir botões ocultos</button>
+        <button onclick="hideHiddenButtons()">Esconder botões ocultos</button>
+        <div id="hidden-buttons">
+            <button onclick="calculatePower()">x²</button>
+            <button onclick="calculateSquareRoot()">√</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button onclick="calculateFactorial()">!</button>
+        </div>
     </div>
     <div>
         <h3>Fórmulas:</h3>

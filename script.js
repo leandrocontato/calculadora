@@ -1,110 +1,91 @@
-document.addEventListener('DOMContentLoaded', function () {
-    function showHiddenButtons() {
-        var hiddenButtons = document.getElementById("hidden-buttons");
-        hiddenButtons.style.display = "block";
+document.getElementById("formula-search").addEventListener("keyup", searchFormula);
+
+function showHiddenButtons() {
+    document.getElementById("hidden-buttons").style.display = "block";
+}
+
+function hideHiddenButtons() {
+    document.getElementById("hidden-buttons").style.display = "none";
+}
+
+document.addEventListener('keydown', function (event) {
+    const display = document.getElementById("display");
+    const key = event.key;
+    if (/[0-9]/.test(key)) {
+        appendToDisplay(key);
+    } else if (/[\+\-\*\/]/.test(key)) {
+        appendToDisplay(' ' + key + ' ');
+    } else if (key === 'Enter') {
+        calculateResult();
+    } else if (key === 'Backspace') {
+        clearLastCharacter();
     }
-
-    function searchFormula() {
-        var input = document.getElementById("formula-search").value.toLowerCase();
-        var matchingFormulas = formulas.filter(function (formula) {
-            return formula.name.toLowerCase().includes(input);
-        });
-
-        var formulaList = document.getElementById("formula-list");
-        formulaList.innerHTML = "";
-
-        if (matchingFormulas.length > 0) {
-            matchingFormulas.forEach(function (formula) {
-                var listItem = document.createElement("li");
-                listItem.textContent = formula.name;
-                listItem.addEventListener("click", function () {
-                    displayFormula(formula.formula);
-                });
-                formulaList.appendChild(listItem);
-            });
-        } else {
-            formulaList.innerHTML = "<li>Nenhuma fórmula encontrada</li>";
-        }
-    }
-
-    function displayFormula(formula) {
-        var display = document.getElementById("display");
-        display.value = formula;
-    }
-
-    function appendToDisplay(value) {
-        var display = document.getElementById("display");
-        display.value += value;
-    }
-
-    function clearDisplay() {
-        var display = document.getElementById("display");
-        display.value = "";
-    }
-
-    function clearLastCharacter() {
-        var display = document.getElementById("display");
-        display.value = display.value.slice(0, -1);
-    }
-
-    function calculateResult() {
-        var display = document.getElementById("display");
-        var result;
-        try {
-            result = eval(display.value);
-            display.value = result;
-        } catch (error) {
-            display.value = "Erro";
-        }
-    }
-
-    function calculateFactorial() {
-        var display = document.getElementById("display");
-        var number = parseFloat(display.value);
-        if (number >= 0 && Number.isInteger(number)) {
-            var factorial = 1;
-            for (var i = 2; i <= number; i++) {
-                factorial *= i;
-            }
-            display.value = factorial;
-        } else {
-            display.value = "Erro";
-        }
-    }
-
-    function calculateSquareRoot() {
-        var display = document.getElementById("display");
-        var number = parseFloat(display.value);
-        if (number >= 0) {
-            var squareRoot = Math.sqrt(number);
-            display.value = squareRoot;
-        } else {
-            display.value = "Erro";
-        }
-    }
-
-    function calculatePower() {
-        var display = document.getElementById("display");
-        var number = parseFloat(display.value);
-        var power = Math.pow(number, 2);
-        display.value = power;
-    }
-
-    // Eventos dos botões
-    document.getElementById("formula-search").addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            searchFormula();
-        }
-    });
-
-    // Defina suas fórmulas aqui
-    var formulas = [];
-
-    // Expondo funções relevantes globalmente (opcional)
-    window.appendToDisplay = appendToDisplay;
-    window.clearLastCharacter = clearLastCharacter;
-    window.calculateResult = calculateResult;
-    window.calculateFactorial = calculateFactorial;
-    window.calculateSquareRoot = calculateSquareRoot;
-    window.calculatePower = calculatePower;
 });
+
+const formulaSearch = document.getElementById("formula-search");
+if (formulaSearch) {
+    formulaSearch.addEventListener("keyup", event => {
+        if (event.keyCode === 13) searchFormula();
+    });
+}
+
+function searchFormula() {
+    const input = document.getElementById("formula-search").value.toLowerCase();
+    const matchingFormulas = formulas.filter(formula => formula.name.toLowerCase().includes(input));
+
+    const formulaList = document.getElementById("formula-list");
+    formulaList.innerHTML = matchingFormulas.length > 0 ?
+        matchingFormulas.map(formula => `<li>${formula.name}</li>`).join('') :
+        "<li>Nenhuma fórmula encontrada</li>";
+
+    formulaList.querySelectorAll("li").forEach((item, index) => {
+        item.addEventListener("click", () => displayFormula(matchingFormulas[index].formula));
+    });
+}
+
+function displayFormula(formula) {
+    document.getElementById("display").value = formula;
+}
+
+function appendToDisplay(value) {
+    document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+
+function clearLastCharacter() {
+    var display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
+
+function calculateResult() {
+    try {
+        const display = document.getElementById("display");
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = "Erro";
+    }
+}
+
+function calculateFactorial() {
+    const display = document.getElementById("display");
+    const number = parseFloat(display.value);
+    const factorial = number >= 0 && Number.isInteger(number) ?
+        [...Array(number).keys()].reduce((acc, val) => acc * (val + 1), 1) :
+        "Erro";
+    display.value = factorial;
+}
+
+function calculateSquareRoot() {
+    const display = document.getElementById("display");
+    const number = parseFloat(display.value);
+    display.value = number >= 0 ? Math.sqrt(number) : "Erro";
+}
+
+function calculatePower() {
+    const display = document.getElementById("display");
+    const number = parseFloat(display.value);
+    display.value = Math.pow(number, 2);
+}
