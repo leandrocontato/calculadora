@@ -89,3 +89,19 @@ function calculatePower() {
     const number = parseFloat(display.value);
     display.value = Math.pow(number, 2);
 }
+
+var historicoContas = [];
+
+function exibirHistorico() {
+    $('#historico-list').html(historicoContas.map(conta => '<li>' + conta + '</li>').join(''));
+}
+
+function limparHistorico() {
+    historicoContas = [];
+    $('#historico-list').empty();
+}
+
+function adicionarConta(conta) {
+    historicoContas.push(conta);
+    exibirHistorico(); 
+}

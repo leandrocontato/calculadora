@@ -45,8 +45,8 @@
         <button onclick="appendToDisplay('.')">.</button>
     </div>
     <div class="button-container">
-        <button onclick="historico()">Historico</button>
-        <button style="display: none;" onclick="historico()">Limpar Historico</button>
+        <button id="exibir-historico" onclick="exibirHistorico()">Histórico</button>
+        <button id="limpar-historico" onclick="limparHistorico()">Limpar Histórico</button>
         <button onclick="showHiddenButtons()">Exibir botões ocultos</button>
         <button onclick="hideHiddenButtons()">Esconder botões ocultos</button>
     </div>
@@ -59,7 +59,11 @@
     </div>
     <div>
         <h3>Fórmulas:</h3>
-        <ul id="formula-list"></ul>
+        <ul id="formula-list" class="formula-list"></ul>
+    </div>
+    <div>
+        <h3>Histórico:</h3>
+        <ul id="historico-list" class="historico-list"></ul>
     </div>
 </body>
 
